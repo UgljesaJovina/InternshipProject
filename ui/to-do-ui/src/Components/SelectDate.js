@@ -25,7 +25,7 @@ export default function SelectDate(props){
             props.closeFunc();
             returnColor();
         }
-        if ((e.charCode || e.keyCode) === 13){
+        if ((e.charCode || e.keyCode) === 13 && props.selectDate){
             returnColor();
             setDate();
         }

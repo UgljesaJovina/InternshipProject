@@ -11,9 +11,9 @@ function App(props) {
   const [createToDo, setCreateToDo] = useState(false);
   const [selectDate, setSelectDate] = useState(false);
   const today = new Date();
-  const [date, setDate] = useState(document.location.pathname !== "/" ? document.location.pathname.substring(1) : `${today.getDate()}-${today.getMonth() + 1 >= 10 ? today.getMonth() + 1 : "0" + (today.getMonth() + 1).toString()}-${today.getFullYear()}`);
+  const [date, setDate] = useState(document.location.pathname !== "/" ? document.location.pathname.substring(1) : `${today.getDate() >= 10 ? today.getDate() : "0" + today.getDate()}-${today.getMonth() + 1 >= 10 ? today.getMonth() + 1 : "0" + (today.getMonth() + 1).toString()}-${today.getFullYear()}`);
   const [toDos, setToDos] = useState([]);
-  const splitDate = date.split("-")
+  const splitDate = date.split("-");
 
   const openCreate = () => {
     setCreateToDo(true);
